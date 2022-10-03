@@ -1,0 +1,859 @@
+										SQL-ASSIGNMENT
+Create a database worker that should contain first name, last name email, department, salary, Join Date with 50 employees.
+
+CREATE TABLE worker
+(
+firstname VARCHAR(20),
+lastname VARCHAR(20),
+email VARCHAR(50),
+department VARCHAR(20),
+salary INT,
+join_date VARCHAR(20)
+);
+
+SELECT * FROM worker;
+
++--------------+--------------+------------------------------+-------------+--------+------------+----+
+| firstname    | lastname     | email                        | department  | salary | join_date  | id |
++--------------+--------------+------------------------------+-------------+--------+------------+----+
+| rajini       | kanth        | rajinikanth@guvi.com         | development | 200000 | 1-2-2000   |  1 |
+| kamal        | hasan        | kamalhasan@guvi.com          | production  | 150000 | 10-5-2000  |  2 |
+| sarath       | kumar        | sarathkumar@guvi.com         | r&d         | 100000 | 10-9-2005  |  3 |
+| ajith        | kumar        | ajithkumar@guvi.com          | sales       |  80000 | 1-2-2010   |  4 |
+| joseph       | vijay        | josephvijay@guvi.com         | hr          |  70000 | 11-4-2015  |  5 |
+| chiyan       | vikram       | chiyanvikram@guvi.com        | development |  50000 | 21-12-2010 |  6 |
+| surya        | sivakumar    | suryasivakumar@guvi.com      | hr          |  60000 | 18-10-2015 |  7 |
+| mani         | ratnam       | maniratnam@guvi.com          | r&d         | 100000 | 1-3-2000   |  8 |
+| lokesh       | kanagaraj    | lokeshkanagaraj@guvi.com     | sales       |  50000 | 1-2-2018   |  9 |
+| aniruth      | ravichandran | aniruthravichandran@guvi.com | production  |  50000 | 15-9-2015  | 10 |
+| vijay        | sethupathi   | vijaysethupathi.com          | development |  55000 | 21--2013   | 11 |
+| ar           | rahman       | arrahman@guvi.com            | r&d         | 100000 | 10-12-2000 | 12 |
+| ilaya        | raja         | ilayaraja@guvi.com           | development |  80000 | 1-1-2000   | 13 |
+| vijay        | antony       | vijayantony@guvi.com         | sales       |  40000 | 1-2-2016   | 14 |
+| gv           | prakash      | gvprakash@guvi.com           | hr          |  30000 | 19-7-2018  | 15 |
+| salman       | khan         | salmankhan@guvi.com          | r&d         |  50000 | 1-12-2017  | 16 |
+| amithap      | batchan      | amithapbatchan@guvi.com      | sales       | 200000 | 1-2-2000   | 17 |
+| amir         | khan         | amirkhan@guvi.com            | production  |  70000 | 15-5-2014  | 18 |
+| akshai       | kumar        | akshaikumar@guvi.com         | development |  50000 | 10-12-2015 | 19 |
+| hirthik      | roshan       | hirthikroshan@guvi.com       | r&d         |  60000 | 17-2-2017  | 20 |
+| deepika      | padukone     | deepikapadukone@guvi.com     | sales       |  70000 | 11-8-2015  | 21 |
+| priyanka     | chopra       | priyankachopra@guvi.com      | development |  40000 | 21-4-2016  | 22 |
+| alia         | bhat         | aliabhat@guvi.com            | production  |  30000 | 25-3-2019  | 23 |
+| dhisha       | patani       | dhishapatani@guvi.com        | hr          |  30000 | 20-3-2021  | 24 |
+| virendar     | sehwag       | virendarsehwag@guvi.com      | sales       | 100000 | 10-9-2005  | 25 |
+| rahul        | dravid       | rahuldravid@guvi.com         | r&d         | 100000 | 1-2-2000   | 26 |
+| sourav       | ganguli      | souravganguli@guvi.com       | hr          |  90000 | 11-9-2005  | 27 |
+| shree        | shanth       | shreeshanth@guvi.com         | accounts    |  50000 | 1-7-2010   | 28 |
+| yuvraj       | singh        | yuvrajsingh@guvi.com         | marketing   |  70000 | 18-5-2010  | 29 |
+| zaheer       | khan         | zaheerkhan@guvi.com          | production  |  30000 | 1-2-2015   | 30 |
+| harbajan     | singh        | harbajansingh@guvi.com       | support     |  30000 | 1-2-2015   | 31 |
+| munaf        | patel        | munafpatel@guvi.com          | r&d         |  25000 | 10-3-2014  | 32 |
+| muhmad       | kaif         | muhamadkaif@guvi.com         | development |  25000 | 13-6-2010  | 33 |
+| rp           | singh        | rpsingh@guvi.com             | sales       |  25000 | 5-8-2011   | 34 |
+| irfan        | patan        | irfanpatan@guvi.com          | accounts    |  30000 | 11-12-2013 | 35 |
+| yusuf        | patan        | yusufpatan@guvi.com          | marketing   |  40000 | 11-12-2014 | 36 |
+| rohit        | sharma       | rohitsharma@guvi.com         | development | 100000 | 1-12-2015  | 37 |
+| shikar       | dawan        | shikardawan@guvi.com         | sales       |  70000 | 1-2-2014   | 38 |
+| suresh       | raina        | sureshraina@guvi.com         | r&d         |  70000 | 1-12-2013  | 39 |
+| pragyan      | ojha         | pragyanojha@guvi.com         | production  | 100000 | 25-7-2011  | 40 |
+| ravichandran | aswin        | ravichandranaswin@guvi.com   | development | 100000 | 18-12-2015 | 41 |
+| ravindra     | jadeja       | ravindrajadeja@guvi.com      | sales       | 100000 | 18-12-2015 | 42 |
+| virat        | kohli        | viratkohli@guvi.com          | support     | 200000 | 1-2-2015   | 43 |
+| sachin       | tendulkar    | sachintendulkar@guvi.com     | development | 200000 | 1-2-2000   | 44 |
+| ms           | dhoni        | msdhoni@guvi.com             | support     | 200000 | 18-5-2010  | 45 |
+| virat        | kohli        | viratkohli@guvi.com          | support     | 200000 | 1-2-2015   | 46 |
+| sachin       | tendulkar    | sachintendulkar@guvi.com     | development | 200000 | 1-2-2000   | 47 |
+| ms           | dhoni        | msdhoni@guvi.com             | support     | 200000 | 18-5-2010  | 48 |
+| sharukh      | khan         | sharukhkhan@guvi.com         | development | 100000 | 1-2-2015   | 49 |
+| sharukh      | khan         | sharukhkhan@guvi.com         | development | 100000 | 1-2-2015   | 50 |
++--------------+--------------+------------------------------+-------------+--------+------------+----+
+
+Task-1
+1.Write an SQL query to fetch “FIRST_NAME” from the Worker table using the alias name as <WORKER_NAME>.
+
+SELECT firstname AS WORKER_NAME FROM worker;
+
++--------------+
+| WORKER_NAME  |
++--------------+
+| rajini       |
+| kamal        |
+| sarath       |
+| ajith        |
+| joseph       |
+| chiyan       |
+| surya        |
+| mani         |
+| lokesh       |
+| aniruth      |
+| vijay        |
+| ar           |
+| ilaya        |
+| vijay        |
+| gv           |
+| sharukh      |
+| salman       |
+| amithap      |
+| amir         |
+| akshai       |
+| hirthik      |
+| deepika      |
+| priyanka     |
+| alia         |
+| dhisha       |
+| sachin       |
+| virendar     |
+| rahul        |
+| sourav       |
+| shree        |
+| yuvraj       |
+| ms           |
+| zaheer       |
+| harbajan     |
+| munaf        |
+| muhmad       |
+| rp           |
+| irfan        |
+| yusuf        |
+| virat        |
+| rohit        |
+| shikar       |
+| suresh       |
+| dinesh       |
+| pragyan      |
+| ravichandran |
+| ravindra     |
+| virat        |
+| sachin       |
+| ms           |
++--------------+
+
+2.Write an SQL query to fetch unique values of DEPARTMENT from the Worker table.
+
+SELECT DISTINCT department FROM worker;
+
++-------------+
+| department  |
++-------------+
+| development |
+| production  |
+| r&d         |
+| sales       |
+| hr          |
+| accounts    |
+| marketing   |
+| support     |
++-------------+
+
+3.Write an SQL query to show the last 5 records from a table.
+
+SELECT * FROM worker LIMIT 45,50;
++--------------+-----------+----------------------------+-------------+--------+------------+
+| firstname    | lastname  | email                      | department  | salary | join_date  |
++--------------+-----------+----------------------------+-------------+--------+------------+
+| ravichandran | aswin     | ravichandranaswin@guvi.com | development | 100000 | 18-12-2015 |
+| ravindra     | jadeja    | ravindrajadeja@guvi.com    | sales       | 100000 | 18-12-2015 |
+| virat        | kohli     | viratkohli@guvi.com        | support     | 200000 | 1-2-2015   |
+| sachin       | tendulkar | sachintendulkar@guvi.com   | development | 200000 | 1-2-2000   |
+| ms           | dhoni     | msdhoni@guvi.com           | support     | 200000 | 18-5-2010  |
++--------------+-----------+----------------------------+-------------+--------+------------+
+
+Task-2
+1.Write an SQL query to print the first three characters of FIRST_NAME from Worker
+
+SELECT SUBSTRING(firstname,1,3) FROM worker;
++--------------------------+
+| SUBSTRING(firstname,1,3) |
++--------------------------+
+| raj                      |
+| kam                      |
+| sar                      |
+| aji                      |
+| jos                      |
+| chi                      |
+| sur                      |
+| man                      |
+| lok                      |
+| ani                      |
+| vij                      |
+| ar                       |
+| ila                      |
+| vij                      |
+| gv                       |
+| sha                      |
+| sal                      |
+| ami                      |
+| ami                      |
+| aks                      |
+| hir                      |
+| dee                      |
+| pri                      |
+| ali                      |
+| dhi                      |
+| sac                      |
+| vir                      |
+| rah                      |
+| sou                      |
+| shr                      |
+| yuv                      |
+| ms                       |
+| zah                      |
+| har                      |
+| mun                      |
+| muh                      |
+| rp                       |
+| irf                      |
+| yus                      |
+| vir                      |
+| roh                      |
+| shi                      |
+| sur                      |
+| din                      |
+| pra                      |
+| rav                      |
+| rav                      |
+| vir                      |
+| sac                      |
+| ms                       |
++--------------------------+
+
+2.Write an SQL query to find the position of the alphabet (‘a’) in the first name
+
+SELECT POSITION('a' IN firstname) FROM worker;
+
++----------------------------+
+| POSITION('a' IN firstname) |
++----------------------------+
+|                          2 |
+|                          2 |
+|                          2 |
+|                          1 |
+|                          0 |
+|                          5 |
+|                          5 |
+|                          2 |
+|                          0 |
+|                          1 |
+|                          4 |
+|                          1 |
+|                          3 |
+|                          4 |
+|                          0 |
+|                          3 |
+|                          2 |
+|                          1 |
+|                          1 |
+|                          1 |
+|                          0 |
+|                          7 |
+|                          5 |
+|                          1 |
+|                          6 |
+|                          2 |
+|                          7 |
+|                          2 |
+|                          5 |
+|                          0 |
+|                          5 |
+|                          0 |
+|                          2 |
+|                          2 |
+|                          4 |
+|                          5 |
+|                          0 |
+|                          4 |
+|                          0 |
+|                          4 |
+|                          0 |
+|                          5 |
+|                          0 |
+|                          0 |
+|                          3 |
+|                          2 |
+|                          2 |
+|                          4 |
+|                          2 |
+|                          0 |
++----------------------------+
+
+3.Write an SQL query to print the name of employees who have the highest salary in each department
+
+SELECT firstname,lastname,department,MAX(salary) FROM worker GROUP BY department;
++-----------+----------+-------------+-------------+
+| firstname | lastname | department  | MAX(salary) |
++-----------+----------+-------------+-------------+
+| rajini    | kanth    | development |      200000 |
+| kamal     | hasan    | production  |      150000 |
+| sarath    | kumar    | r&d         |      100000 |
+| ajith     | kumar    | sales       |      200000 |
+| joseph    | vijay    | hr          |       90000 |
+| shree     | shanth   | accounts    |       50000 |
+| yuvraj    | singh    | marketing   |       70000 |
+| ms        | dhoni    | support     |      200000 |
++-----------+----------+-------------+-------------+
+
+Task-3
+1.Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
+
+SELECT RTRIM(firstname) FROM worker;
+
++------------------+
+| RTRIM(firstname) |
++------------------+
+| rajini           |
+| kamal            |
+| sarath           |
+| ajith            |
+| joseph           |
+| chiyan           |
+| surya            |
+| mani             |
+| lokesh           |
+| aniruth          |
+| vijay            |
+| ar               |
+| ilaya            |
+| vijay            |
+| gv               |
+| sharukh          |
+| salman           |
+| amithap          |
+| amir             |
+| akshai           |
+| hirthik          |
+| deepika          |
+| priyanka         |
+| alia             |
+| dhisha           |
+| sachin           |
+| virendar         |
+| rahul            |
+| sourav           |
+| shree            |
+| yuvraj           |
+| ms               |
+| zaheer           |
+| harbajan         |
+| munaf            |
+| muhmad           |
+| rp               |
+| irfan            |
+| yusuf            |
+| virat            |
+| rohit            |
+| shikar           |
+| suresh           |
+| dinesh           |
+| pragyan          |
+| ravichandran     |
+| ravindra         |
+| virat            |
+| sachin           |
+| ms               |
++------------------+
+
+2.Write an SQL query that fetches the unique values of DEPARTMENT from the Worker table and prints its length
+
+SELECT DISTINCT department,LENGTH(department) FROM worker;
+
++-------------+--------------------+
+| department  | LENGTH(department) |
++-------------+--------------------+
+| development |                 11 |
+| production  |                 10 |
+| r&d         |                  3 |
+| sales       |                  5 |
+| hr          |                  2 |
+| accounts    |                  8 |
+| marketing   |                  9 |
+| support     |                  7 |
++-------------+--------------------+
+
+3.Write an SQL query to fetch nth max salaries from a table.  (5th max salary)
+
+SELECT * FROM(SELECT firstname,lastname,salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk FROM worker)subquery WHERE rnk=5;
+
++-----------+----------+--------+-----+
+| firstname | lastname | salary | rnk |
++-----------+----------+--------+-----+
+| ajith     | kumar    |  80000 |   5 |
+| ilaya     | raja     |  80000 |   5 |
++-----------+----------+--------+-----+
+
+Task-4
+1.Write an SQL query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
+
+SELECT REPLACE(firstname,'a','A') FROM worker;
+
++----------------------------+
+| REPLACE(firstname,'a','A') |
++----------------------------+
+| rAjini                     |
+| kAmAl                      |
+| sArAth                     |
+| Ajith                      |
+| joseph                     |
+| chiyAn                     |
+| suryA                      |
+| mAni                       |
+| lokesh                     |
+| Aniruth                    |
+| vijAy                      |
+| Ar                         |
+| ilAyA                      |
+| vijAy                      |
+| gv                         |
+| shArukh                    |
+| sAlmAn                     |
+| AmithAp                    |
+| Amir                       |
+| AkshAi                     |
+| hirthik                    |
+| deepikA                    |
+| priyAnkA                   |
+| AliA                       |
+| dhishA                     |
+| sAchin                     |
+| virendAr                   |
+| rAhul                      |
+| sourAv                     |
+| shree                      |
+| yuvrAj                     |
+| ms                         |
+| zAheer                     |
+| hArbAjAn                   |
+| munAf                      |
+| muhmAd                     |
+| rp                         |
+| irfAn                      |
+| yusuf                      |
+| virAt                      |
+| rohit                      |
+| shikAr                     |
+| suresh                     |
+| dinesh                     |
+| prAgyAn                    |
+| rAvichAndrAn               |
+| rAvindrA                   |
+| virAt                      |
+| sAchin                     |
+| ms                         |
++----------------------------+
+
+2.Write an SQL query to print all Worker details from the Worker table order FIRST_NAME Ascending and DEPARTMENT Descending.
+
+SELECT firstname,department FROM worker ORDER BY firstname ASC, department DESC;
+
++--------------+-------------+
+| firstname    | department  |
++--------------+-------------+
+| ajith        | sales       |
+| akshai       | development |
+| alia         | production  |
+| amir         | production  |
+| amithap      | sales       |
+| aniruth      | production  |
+| ar           | r&d         |
+| chiyan       | development |
+| deepika      | sales       |
+| dhisha       | hr          |
+| dinesh       | support     |
+| gv           | hr          |
+| harbajan     | support     |
+| hirthik      | r&d         |
+| ilaya        | development |
+| irfan        | accounts    |
+| joseph       | hr          |
+| kamal        | production  |
+| lokesh       | sales       |
+| mani         | r&d         |
+| ms           | support     |
+| ms           | support     |
+| muhmad       | development |
+| munaf        | r&d         |
+| pragyan      | production  |
+| priyanka     | development |
+| rahul        | r&d         |
+| rajini       | development |
+| ravichandran | development |
+| ravindra     | sales       |
+| rohit        | development |
+| rp           | sales       |
+| sachin       | development |
+| sachin       | development |
+| salman       | r&d         |
+| sarath       | r&d         |
+| sharukh      | development |
+| shikar       | sales       |
+| shree        | accounts    |
+| sourav       | hr          |
+| suresh       | r&d         |
+| surya        | hr          |
+| vijay        | sales       |
+| vijay        | development |
+| virat        | support     |
+| virat        | support     |
+| virendar     | sales       |
+| yusuf        | marketing   |
+| yuvraj       | marketing   |
+| zaheer       | production  |
++--------------+-------------+
+
+3.Write an SQL query to fetch the names of workers who earn the highest salary.
+
+SELECT firstname,lastname FROM(SELECT firstname,lastname,salary,DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk FROM worker)subquery WHERE rnk=1;
++-----------+-----------+
+| firstname | lastname  |
++-----------+-----------+
+| rajini    | kanth     |
+| virat     | kohli     |
+| ms        | dhoni     |
+| ms        | dhoni     |
+| sachin    | tendulkar |
+| virat     | kohli     |
+| amithap   | batchan   |
+| sachin    | tendulkar |
++-----------+-----------+
+
+Task-5
+1.Write an SQL query to print details of workers excluding first names, “Rajini” and “Kamal” from the Worker table.
+
+SELECT * FROM worker WHERE firstname != 'rajini' AND firstname != 'kamal';
+
++--------------+--------------+------------------------------+-------------+--------+------------+
+| firstname    | lastname     | email                        | department  | salary | join_date  |
++--------------+--------------+------------------------------+-------------+--------+------------+
+| sarath       | kumar        | sarathkumar@guvi.com         | r&d         | 100000 | 10-9-2005  |
+| ajith        | kumar        | ajithkumar@guvi.com          | sales       |  80000 | 1-2-2010   |
+| joseph       | vijay        | josephvijay@guvi.com         | hr          |  70000 | 11-4-2015  |
+| chiyan       | vikram       | chiyanvikram@guvi.com        | development |  50000 | 21-12-2010 |
+| surya        | sivakumar    | suryasivakumar@guvi.com      | hr          |  60000 | 18-10-2015 |
+| mani         | ratnam       | maniratnam@guvi.com          | r&d         | 100000 | 1-3-2000   |
+| lokesh       | kanagaraj    | lokeshkanagaraj@guvi.com     | sales       |  50000 | 1-2-2018   |
+| aniruth      | ravichandran | aniruthravichandran@guvi.com | production  |  50000 | 15-9-2015  |
+| vijay        | sethupathi   | vijaysethupathi.com          | development |  55000 | 21--2013   |
+| ar           | rahman       | arrahman@guvi.com            | r&d         | 100000 | 10-12-2000 |
+| ilaya        | raja         | ilayaraja@guvi.com           | development |  80000 | 1-1-2000   |
+| vijay        | antony       | vijayantony@guvi.com         | sales       |  40000 | 1-2-2016   |
+| gv           | prakash      | gvprakash@guvi.com           | hr          |  30000 | 19-7-2018  |
+| sharukh      | khan         | sharukhkhan@guvi.com         | development | 100000 | 1-2-2015   |
+| salman       | khan         | salmankhan@guvi.com          | r&d         |  50000 | 1-12-2017  |
+| amithap      | batchan      | amithapbatchan@guvi.com      | sales       | 200000 | 1-2-2000   |
+| amir         | khan         | amirkhan@guvi.com            | production  |  70000 | 15-5-2014  |
+| akshai       | kumar        | akshaikumar@guvi.com         | development |  50000 | 10-12-2015 |
+| hirthik      | roshan       | hirthikroshan@guvi.com       | r&d         |  60000 | 17-2-2017  |
+| deepika      | padukone     | deepikapadukone@guvi.com     | sales       |  70000 | 11-8-2015  |
+| priyanka     | chopra       | priyankachopra@guvi.com      | development |  40000 | 21-4-2016  |
+| alia         | bhat         | aliabhat@guvi.com            | production  |  30000 | 25-3-2019  |
+| dhisha       | patani       | dhishapatani@guvi.com        | hr          |  30000 | 10-5-2020  |
+| sachin       | tendulkar    | sachintendulkar@guvi.com     | development | 200000 | 1-2-2000   |
+| virendar     | sehwag       | virendarsehwag@guvi.com      | sales       | 100000 | 10-9-2005  |
+| rahul        | dravid       | rahuldravid@guvi.com         | r&d         | 100000 | 1-2-2000   |
+| sourav       | ganguli      | souravganguli@guvi.com       | hr          |  90000 | 11-9-2005  |
+| shree        | shanth       | shreeshanth@guvi.com         | accounts    |  50000 | 1-7-2010   |
+| yuvraj       | singh        | yuvrajsingh@guvi.com         | marketing   |  70000 | 18-5-2010  |
+| ms           | dhoni        | msdhoni@guvi.com             | support     | 200000 | 18-5-2010  |
+| zaheer       | khan         | zaheerkhan@guvi.com          | production  |  30000 | 1-2-2015   |
+| harbajan     | singh        | harbajansingh@guvi.com       | support     |  30000 | 1-2-2015   |
+| munaf        | patel        | munafpatel@guvi.com          | r&d         |  25000 | 10-3-2014  |
+| muhmad       | kaif         | muhamadkaif@guvi.com         | development |  25000 | 13-6-2010  |
+| rp           | singh        | rpsingh@guvi.com             | sales       |  25000 | 5-8-2011   |
+| irfan        | patan        | irfanpatan@guvi.com          | accounts    |  30000 | 11-12-2013 |
+| yusuf        | patan        | yusufpatan@guvi.com          | marketing   |  40000 | 11-12-2014 |
+| virat        | kohli        | viratkohli@guvi.com          | support     | 200000 | 1-2-2015   |
+| rohit        | sharma       | rohitsharma@guvi.com         | development | 100000 | 1-12-2015  |
+| shikar       | dawan        | shikardawan@guvi.com         | sales       |  70000 | 1-2-2014   |
+| suresh       | raina        | sureshraina@guvi.com         | r&d         |  70000 | 1-12-2013  |
+| dinesh       | karthik      | sharukhkhan@guvi.com         | support     |  60000 | 5-6-2011   |
+| pragyan      | ojha         | pragyanojha@guvi.com         | production  | 100000 | 25-7-2011  |
+| ravichandran | aswin        | ravichandranaswin@guvi.com   | development | 100000 | 18-12-2015 |
+| ravindra     | jadeja       | ravindrajadeja@guvi.com      | sales       | 100000 | 18-12-2015 |
+| virat        | kohli        | viratkohli@guvi.com          | support     | 200000 | 1-2-2015   |
+| sachin       | tendulkar    | sachintendulkar@guvi.com     | development | 200000 | 1-2-2000   |
+| ms           | dhoni        | msdhoni@guvi.com             | support     | 200000 | 18-5-2010  |
++--------------+--------------+------------------------------+-------------+--------+------------+
+
+2.Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+
+SELECT * FROM worker WHERE firstname LIKE '_____h';
+
++-----------+-----------+--------------------------+------------+--------+-----------+
+| firstname | lastname  | email                    | department | salary | join_date |
++-----------+-----------+--------------------------+------------+--------+-----------+
+| sarath    | kumar     | sarathkumar@guvi.com     | r&d        | 100000 | 10-9-2005 |
+| joseph    | vijay     | josephvijay@guvi.com     | hr         |  70000 | 11-4-2015 |
+| lokesh    | kanagaraj | lokeshkanagaraj@guvi.com | sales      |  50000 | 1-2-2018  |
+| suresh    | raina     | sureshraina@guvi.com     | r&d        |  70000 | 1-12-2013 |
+| dinesh    | karthik   | sharukhkhan@guvi.com     | support    |  60000 | 5-6-2011  |
++-----------+-----------+--------------------------+------------+--------+-----------+
+
+3.Write a query to validate Email of Employee (email should have first name last name and guvi.com example (first name=Kamal last name= raja and the mail id should be kamalraja@guvi.com).
+
+SELECT * FROM worker WHERE email NOT LIKE '%___%___%@guvi.com%';
+
++-----------+------------+---------------------+-------------+--------+-----------+
+| firstname | lastname   | email               | department  | salary | join_date |
++-----------+------------+---------------------+-------------+--------+-----------+
+| vijay     | sethupathi | vijaysethupathi.com | development |  55000 | 21--2013  |
++-----------+------------+---------------------+-------------+--------+-----------+
+
+Task-6
+1.Write an SQL query to print details of the Workers who have joined in March ’2021.
+
+SELECT * FROM worker WHERE join_date LIKE '%_%3-2021%';
+
++-----------+----------+-----------------------+------------+--------+-----------+
+| firstname | lastname | email                 | department | salary | join_date |
++-----------+----------+-----------------------+------------+--------+-----------+
+| dhisha    | patani   | dhishapatani@guvi.com | hr         |  30000 | 20-3-2021 |
++-----------+----------+-----------------------+------------+--------+-----------+
+
+2.Write an SQL query to fetch duplicates that have matching data in some fields of a table.
+
+select email,count(*) from worker group by email having count(*) > 1;
+
++--------------------------+----------+
+| email                    | count(*) |
++--------------------------+----------+
+| sharukhkhan@guvi.com     |        2 |
+| sachintendulkar@guvi.com |        2 |
+| msdhoni@guvi.com         |        2 |
+| viratkohli@guvi.com      |        2 |
++--------------------------+----------+
+
+SELECT * FROM worker WHERE id NOT IN (SELECT MIN(id) FROM worker GROUP BY email);
++-----------+-----------+--------------------------+-------------+--------+-----------+----+
+| firstname | lastname  | email                    | department  | salary | join_date | id |
++-----------+-----------+--------------------------+-------------+--------+-----------+----+
+| virat     | kohli     | viratkohli@guvi.com      | support     | 200000 | 1-2-2015  | 46 |
+| sachin    | tendulkar | sachintendulkar@guvi.com | development | 200000 | 1-2-2000  | 47 |
+| ms        | dhoni     | msdhoni@guvi.com         | support     | 200000 | 18-5-2010 | 48 |
+| sharukh   | khan      | sharukhkhan@guvi.com     | development | 100000 | 1-2-2015  | 50 |
++-----------+-----------+--------------------------+-------------+--------+-----------+----+
+
+3.How to remove duplicate rows from the Employees table.
+
+DELETE FROM employees WHERE id IN (SELECT id FROM(SELECT * FROM(SELECT *,ROW_NUMBER() OVER (PARTITION BY email) AS rn FROM employees)x WHERE x.rn > 1)y);
+Query OK, 4 rows affected (0.14 sec)
+
+Task-7
+
+1.Write an SQL query to show only odd rows from a table.
+
+SELECT * FROM worker where MOD(id,2) !=0;
+
++--------------+------------+----------------------------+-------------+--------+------------+----+
+| firstname    | lastname   | email                      | department  | salary | join_date  | id |
++--------------+------------+----------------------------+-------------+--------+------------+----+
+| rajini       | kanth      | rajinikanth@guvi.com       | development | 200000 | 1-2-2000   |  1 |
+| sarath       | kumar      | sarathkumar@guvi.com       | r&d         | 100000 | 10-9-2005  |  3 |
+| joseph       | vijay      | josephvijay@guvi.com       | hr          |  70000 | 11-4-2015  |  5 |
+| surya        | sivakumar  | suryasivakumar@guvi.com    | hr          |  60000 | 18-10-2015 |  7 |
+| lokesh       | kanagaraj  | lokeshkanagaraj@guvi.com   | sales       |  50000 | 1-2-2018   |  9 |
+| vijay        | sethupathi | vijaysethupathi.com        | development |  55000 | 21--2013   | 11 |
+| ilaya        | raja       | ilayaraja@guvi.com         | development |  80000 | 1-1-2000   | 13 |
+| gv           | prakash    | gvprakash@guvi.com         | hr          |  30000 | 19-7-2018  | 15 |
+| amithap      | batchan    | amithapbatchan@guvi.com    | sales       | 200000 | 1-2-2000   | 17 |
+| akshai       | kumar      | akshaikumar@guvi.com       | development |  50000 | 10-12-2015 | 19 |
+| deepika      | padukone   | deepikapadukone@guvi.com   | sales       |  70000 | 11-8-2015  | 21 |
+| alia         | bhat       | aliabhat@guvi.com          | production  |  30000 | 25-3-2019  | 23 |
+| virendar     | sehwag     | virendarsehwag@guvi.com    | sales       | 100000 | 10-9-2005  | 25 |
+| sourav       | ganguli    | souravganguli@guvi.com     | hr          |  90000 | 11-9-2005  | 27 |
+| yuvraj       | singh      | yuvrajsingh@guvi.com       | marketing   |  70000 | 18-5-2010  | 29 |
+| harbajan     | singh      | harbajansingh@guvi.com     | support     |  30000 | 1-2-2015   | 31 |
+| muhmad       | kaif       | muhamadkaif@guvi.com       | development |  25000 | 13-6-2010  | 33 |
+| irfan        | patan      | irfanpatan@guvi.com        | accounts    |  30000 | 11-12-2013 | 35 |
+| rohit        | sharma     | rohitsharma@guvi.com       | development | 100000 | 1-12-2015  | 37 |
+| suresh       | raina      | sureshraina@guvi.com       | r&d         |  70000 | 1-12-2013  | 39 |
+| ravichandran | aswin      | ravichandranaswin@guvi.com | development | 100000 | 18-12-2015 | 41 |
+| virat        | kohli      | viratkohli@guvi.com        | support     | 200000 | 1-2-2015   | 43 |
+| ms           | dhoni      | msdhoni@guvi.com           | support     | 200000 | 18-5-2010  | 45 |
+| sachin       | tendulkar  | sachintendulkar@guvi.com   | development | 200000 | 1-2-2000   | 47 |
+| sharukh      | khan       | sharukhkhan@guvi.com       | development | 100000 | 1-2-2015   | 49 |
++--------------+------------+----------------------------+-------------+--------+------------+----+
+
+2.Write an SQL query to clone a new table from another table.
+
+CREATE TABLE employees(SELECT * FROM worker);
+
+Query OK, 50 rows affected (1.64 sec)
+Records: 50  Duplicates: 0  Warnings: 0
+
+Task-8
+
+1.Write an SQL query to fetch intersecting records of two tables.
+
+SELECT * FROM worker WHERE id IN (SELECT id FROM employees);
+
++--------------+--------------+------------------------------+-------------+--------+------------+----+
+| firstname    | lastname     | email                        | department  | salary | join_date  | id |
++--------------+--------------+------------------------------+-------------+--------+------------+----+
+| rajini       | kanth        | rajinikanth@guvi.com         | development | 200000 | 1-2-2000   |  1 |
+| kamal        | hasan        | kamalhasan@guvi.com          | production  | 150000 | 10-5-2000  |  2 |
+| sarath       | kumar        | sarathkumar@guvi.com         | r&d         | 100000 | 10-9-2005  |  3 |
+| ajith        | kumar        | ajithkumar@guvi.com          | sales       |  80000 | 1-2-2010   |  4 |
+| joseph       | vijay        | josephvijay@guvi.com         | hr          |  70000 | 11-4-2015  |  5 |
+| chiyan       | vikram       | chiyanvikram@guvi.com        | development |  50000 | 21-12-2010 |  6 |
+| surya        | sivakumar    | suryasivakumar@guvi.com      | hr          |  60000 | 18-10-2015 |  7 |
+| mani         | ratnam       | maniratnam@guvi.com          | r&d         | 100000 | 1-3-2000   |  8 |
+| lokesh       | kanagaraj    | lokeshkanagaraj@guvi.com     | sales       |  50000 | 1-2-2018   |  9 |
+| aniruth      | ravichandran | aniruthravichandran@guvi.com | production  |  50000 | 15-9-2015  | 10 |
+| vijay        | sethupathi   | vijaysethupathi.com          | development |  55000 | 21--2013   | 11 |
+| ar           | rahman       | arrahman@guvi.com            | r&d         | 100000 | 10-12-2000 | 12 |
+| ilaya        | raja         | ilayaraja@guvi.com           | development |  80000 | 1-1-2000   | 13 |
+| vijay        | antony       | vijayantony@guvi.com         | sales       |  40000 | 1-2-2016   | 14 |
+| gv           | prakash      | gvprakash@guvi.com           | hr          |  30000 | 19-7-2018  | 15 |
+| salman       | khan         | salmankhan@guvi.com          | r&d         |  50000 | 1-12-2017  | 16 |
+| amithap      | batchan      | amithapbatchan@guvi.com      | sales       | 200000 | 1-2-2000   | 17 |
+| amir         | khan         | amirkhan@guvi.com            | production  |  70000 | 15-5-2014  | 18 |
+| akshai       | kumar        | akshaikumar@guvi.com         | development |  50000 | 10-12-2015 | 19 |
+| hirthik      | roshan       | hirthikroshan@guvi.com       | r&d         |  60000 | 17-2-2017  | 20 |
+| deepika      | padukone     | deepikapadukone@guvi.com     | sales       |  70000 | 11-8-2015  | 21 |
+| priyanka     | chopra       | priyankachopra@guvi.com      | development |  40000 | 21-4-2016  | 22 |
+| alia         | bhat         | aliabhat@guvi.com            | production  |  30000 | 25-3-2019  | 23 |
+| dhisha       | patani       | dhishapatani@guvi.com        | hr          |  30000 | 20-3-2021  | 24 |
+| virendar     | sehwag       | virendarsehwag@guvi.com      | sales       | 100000 | 10-9-2005  | 25 |
+| rahul        | dravid       | rahuldravid@guvi.com         | r&d         | 100000 | 1-2-2000   | 26 |
+| sourav       | ganguli      | souravganguli@guvi.com       | hr          |  90000 | 11-9-2005  | 27 |
+| shree        | shanth       | shreeshanth@guvi.com         | accounts    |  50000 | 1-7-2010   | 28 |
+| yuvraj       | singh        | yuvrajsingh@guvi.com         | marketing   |  70000 | 18-5-2010  | 29 |
+| zaheer       | khan         | zaheerkhan@guvi.com          | production  |  30000 | 1-2-2015   | 30 |
+| harbajan     | singh        | harbajansingh@guvi.com       | support     |  30000 | 1-2-2015   | 31 |
+| munaf        | patel        | munafpatel@guvi.com          | r&d         |  25000 | 10-3-2014  | 32 |
+| muhmad       | kaif         | muhamadkaif@guvi.com         | development |  25000 | 13-6-2010  | 33 |
+| rp           | singh        | rpsingh@guvi.com             | sales       |  25000 | 5-8-2011   | 34 |
+| irfan        | patan        | irfanpatan@guvi.com          | accounts    |  30000 | 11-12-2013 | 35 |
+| yusuf        | patan        | yusufpatan@guvi.com          | marketing   |  40000 | 11-12-2014 | 36 |
+| rohit        | sharma       | rohitsharma@guvi.com         | development | 100000 | 1-12-2015  | 37 |
+| shikar       | dawan        | shikardawan@guvi.com         | sales       |  70000 | 1-2-2014   | 38 |
+| suresh       | raina        | sureshraina@guvi.com         | r&d         |  70000 | 1-12-2013  | 39 |
+| pragyan      | ojha         | pragyanojha@guvi.com         | production  | 100000 | 25-7-2011  | 40 |
+| ravichandran | aswin        | ravichandranaswin@guvi.com   | development | 100000 | 18-12-2015 | 41 |
+| ravindra     | jadeja       | ravindrajadeja@guvi.com      | sales       | 100000 | 18-12-2015 | 42 |
+| virat        | kohli        | viratkohli@guvi.com          | support     | 200000 | 1-2-2015   | 43 |
+| sachin       | tendulkar    | sachintendulkar@guvi.com     | development | 200000 | 1-2-2000   | 44 |
+| ms           | dhoni        | msdhoni@guvi.com             | support     | 200000 | 18-5-2010  | 45 |
+| sharukh      | khan         | sharukhkhan@guvi.com         | development | 100000 | 1-2-2015   | 50 |
++--------------+--------------+------------------------------+-------------+--------+------------+----+
+46 rows in set (0.00 sec)
+
+2.Write an SQL query to show records from one table that another table does not have.
+
+ SELECT * FROM worker WHERE id NOT IN (SELECT id FROM employees);
+ 
++-----------+-----------+--------------------------+-------------+--------+-----------+----+
+| firstname | lastname  | email                    | department  | salary | join_date | id |
++-----------+-----------+--------------------------+-------------+--------+-----------+----+
+| virat     | kohli     | viratkohli@guvi.com      | support     | 200000 | 1-2-2015  | 46 |
+| sachin    | tendulkar | sachintendulkar@guvi.com | development | 200000 | 1-2-2000  | 47 |
+| ms        | dhoni     | msdhoni@guvi.com         | support     | 200000 | 18-5-2010 | 48 |
+| sharukh   | khan      | sharukhkhan@guvi.com     | development | 100000 | 1-2-2015  | 49 |
++-----------+-----------+--------------------------+-------------+--------+-----------+----+
+4 rows in set (0.05 sec)
+
+Task-9
+1.Write an SQL query to show the top n (say 15) records of a table.
+
+SELECT * FROM worker ORDER BY id LIMIT 0,15;
+
++-----------+--------------+------------------------------+-------------+--------+------------+----+
+| firstname | lastname     | email                        | department  | salary | join_date  | id |
++-----------+--------------+------------------------------+-------------+--------+------------+----+
+| rajini    | kanth        | rajinikanth@guvi.com         | development | 200000 | 1-2-2000   |  1 |
+| kamal     | hasan        | kamalhasan@guvi.com          | production  | 150000 | 10-5-2000  |  2 |
+| sarath    | kumar        | sarathkumar@guvi.com         | r&d         | 100000 | 10-9-2005  |  3 |
+| ajith     | kumar        | ajithkumar@guvi.com          | sales       |  80000 | 1-2-2010   |  4 |
+| joseph    | vijay        | josephvijay@guvi.com         | hr          |  70000 | 11-4-2015  |  5 |
+| chiyan    | vikram       | chiyanvikram@guvi.com        | development |  50000 | 21-12-2010 |  6 |
+| surya     | sivakumar    | suryasivakumar@guvi.com      | hr          |  60000 | 18-10-2015 |  7 |
+| mani      | ratnam       | maniratnam@guvi.com          | r&d         | 100000 | 1-3-2000   |  8 |
+| lokesh    | kanagaraj    | lokeshkanagaraj@guvi.com     | sales       |  50000 | 1-2-2018   |  9 |
+| aniruth   | ravichandran | aniruthravichandran@guvi.com | production  |  50000 | 15-9-2015  | 10 |
+| vijay     | sethupathi   | vijaysethupathi.com          | development |  55000 | 21--2013   | 11 |
+| ar        | rahman       | arrahman@guvi.com            | r&d         | 100000 | 10-12-2000 | 12 |
+| ilaya     | raja         | ilayaraja@guvi.com           | development |  80000 | 1-1-2000   | 13 |
+| vijay     | antony       | vijayantony@guvi.com         | sales       |  40000 | 1-2-2016   | 14 |
+| gv        | prakash      | gvprakash@guvi.com           | hr          |  30000 | 19-7-2018  | 15 |
++-----------+--------------+------------------------------+-------------+--------+------------+----+
+15 rows in set (0.00 sec)
+
+2.Write an SQL query to determine the nth (say n=10) highest salary from a table.
+
+SELECT * FROM(SELECT firstname,lastname,salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk FROM worker)subquery WHERE rnk=10;
++-----------+----------+--------+-----+
+| firstname | lastname | salary | rnk |
++-----------+----------+--------+-----+
+| yusuf     | patan    |  40000 |  10 |
+| priyanka  | chopra   |  40000 |  10 |
+| vijay     | antony   |  40000 |  10 |
++-----------+----------+--------+-----+
+
+Task-10
+1.Write an SQL query to determine the 8th highest salary without using TOP or LIMIT methods.
+
+SELECT firstname,lastname,salary,rnk FROM (SELECT firstname,lastname,salary,DENSE_RANK() OVER(ORDER BY salary DESC) AS rnk FROM worker)subquery WHERE rnk = 8;
++-----------+------------+--------+-----+
+| firstname | lastname   | salary | rnk |
++-----------+------------+--------+-----+
+| vijay     | sethupathi |  55000 |   8 |
++-----------+------------+--------+-----+
+
+2.Write an SQL query to fetch the list of employees with the same salary.
+
+SELECT firstname,lastname,salary,COUNT(*) OVER (PARTITION BY salary) FROM worker;
+
++--------------+--------------+--------+-------------------------------------+
+| firstname    | lastname     | salary | COUNT(*) OVER (PARTITION BY salary) |
++--------------+--------------+--------+-------------------------------------+
+| rp           | singh        |  25000 |                                   3 |
+| muhmad       | kaif         |  25000 |                                   3 |
+| munaf        | patel        |  25000 |                                   3 |
+| irfan        | patan        |  30000 |                                   6 |
+| harbajan     | singh        |  30000 |                                   6 |
+| zaheer       | khan         |  30000 |                                   6 |
+| gv           | prakash      |  30000 |                                   6 |
+| alia         | bhat         |  30000 |                                   6 |
+| dhisha       | patani       |  30000 |                                   6 |
+| vijay        | antony       |  40000 |                                   3 |
+| priyanka     | chopra       |  40000 |                                   3 |
+| yusuf        | patan        |  40000 |                                   3 |
+| shree        | shanth       |  50000 |                                   6 |
+| chiyan       | vikram       |  50000 |                                   6 |
+| lokesh       | kanagaraj    |  50000 |                                   6 |
+| aniruth      | ravichandran |  50000 |                                   6 |
+| salman       | khan         |  50000 |                                   6 |
+| akshai       | kumar        |  50000 |                                   6 |
+| vijay        | sethupathi   |  55000 |                                   1 |
+| surya        | sivakumar    |  60000 |                                   2 |
+| hirthik      | roshan       |  60000 |                                   2 |
+| joseph       | vijay        |  70000 |                                   6 |
+| yuvraj       | singh        |  70000 |                                   6 |
+| amir         | khan         |  70000 |                                   6 |
+| deepika      | padukone     |  70000 |                                   6 |
+| shikar       | dawan        |  70000 |                                   6 |
+| suresh       | raina        |  70000 |                                   6 |
+| ilaya        | raja         |  80000 |                                   2 |
+| ajith        | kumar        |  80000 |                                   2 |
+| sourav       | ganguli      |  90000 |                                   1 |
+| ar           | rahman       | 100000 |                                  11 |
+| rahul        | dravid       | 100000 |                                  11 |
+| mani         | ratnam       | 100000 |                                  11 |
+| sarath       | kumar        | 100000 |                                  11 |
+| rohit        | sharma       | 100000 |                                  11 |
+| virendar     | sehwag       | 100000 |                                  11 |
+| pragyan      | ojha         | 100000 |                                  11 |
+| ravichandran | aswin        | 100000 |                                  11 |
+| ravindra     | jadeja       | 100000 |                                  11 |
+| sharukh      | khan         | 100000 |                                  11 |
+| sharukh      | khan         | 100000 |                                  11 |
+| kamal        | hasan        | 150000 |                                   1 |
+| rajini       | kanth        | 200000 |                                   8 |
+| amithap      | batchan      | 200000 |                                   8 |
+| virat        | kohli        | 200000 |                                   8 |
+| ms           | dhoni        | 200000 |                                   8 |
+| virat        | kohli        | 200000 |                                   8 |
+| sachin       | tendulkar    | 200000 |                                   8 |
+| ms           | dhoni        | 200000 |                                   8 |
+| sachin       | tendulkar    | 200000 |                                   8 |
++--------------+--------------+--------+-------------------------------------+
+
